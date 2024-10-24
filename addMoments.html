@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+  <form action="">
+    <input type="file" id="fileInput" accept="image/*" disabled required>
+    <input type="text" id="description" placeholder="Tell us about your moment" required><br>
+    <select name="Category" id="Category" required>
+      <option value="Lovely">Lovely</option>
+      <option value="Sad">Sad</option>
+      <option value="Happy" selected>Happy</option>
+      <option value="Stupid">Stupid</option>
+      <option value="Funny">Funny</option>
+    </select>
+
+    <button id="addMoment">Add Moment</button>
+
+  </form>
+
+  <div class="preview">
+
+  </div>
+
+  <script src="addMoment.js" type="module"></script>
+</body>
+
+</html>
