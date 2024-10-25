@@ -63,6 +63,7 @@ input {
   border: 2px solid hsla(284, 90%, 48%, 0.71);
   border-radius: 20px;
   overflow: hidden;
+  margin-bottom: 10px;
 }
 
 .image-container {

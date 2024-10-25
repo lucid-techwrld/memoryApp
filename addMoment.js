@@ -55,7 +55,7 @@ function saveMomentInfo() {
     //console.log('Saving MomentInfo...');
     const id = Date.now();
     const date = new Date();
-    date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    date.toUTCString();
     //console.log(id)
     momentsData.push({
       id,
