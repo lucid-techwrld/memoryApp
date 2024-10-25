@@ -35,7 +35,7 @@ function renderMoments() {
   });
   
   document.querySelector('.js-add-btn').addEventListener('click', () => {
-    //window.location.href = "addMoments.html"
+    window.location.href = "addMoments.html"
   })
   
 }

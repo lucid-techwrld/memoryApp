@@ -44,6 +44,7 @@ category.addEventListener('change', enableInput);
 
 inputFile.addEventListener('change', (event) => {
   readFile(event.target.files[0]);
+
 });
 
 enableInput();
@@ -104,8 +105,9 @@ let fileDataURL = ''; // Variable to hold the dataURL
 // Function to read the file
 
 function readFile(file) {
-  if (!file) {
-    console.error('No file Selected');
+  const maxSize = 1 * 1024 * 1024;
+  if (file.size > maxSize) {
+    alert('File exceeded 1MB, Please select a smaller file size');
     return;
   }
   const reader = new FileReader();
