@@ -6,7 +6,8 @@ if (!momentsData) {
       id: 1,
       file: 'images/happy.jpeg',
       category: 'Happy',
-      desc: 'Im so Happy'
+      desc: 'Im so Happy',
+      date: 'October 21, 2024'
     }
   ]
 }

@@ -1,16 +1,21 @@
 import {momentsData, removeMoment} from './momentsData.js'
 
+const now = new Date();
+console.log(now.toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }));
 
 function renderMoments() {
   let momentsHTML = '';
   momentsData.forEach((moment) => {
      momentsHTML += `
     <div class="content js-conatiner-${moment.id}">
-    <button class="removeMoment" data-moment-id = "${moment.id}"> Remove </button>
-      <img src="${moment.file}" alt="image.jpg" width="100px" height="100px">
+    <div class="image-container">
+    <button class="removeMoment" data-moment-id = "${moment.id}"> Delete </button>
+      <img src="${moment.file}" alt="image.jpg" class="inputImage">
+      </div>
       <div class="info">
-        <p>Category: <b>${moment.category}</b></p>
-        <p>${moment.desc}</p>
+        <p class="category">Category: <b>${moment.category}</b></p>
+        <p class="desc">${moment.desc}</p>
+        <p class="date"> ${moment.date}</p>
       </div>
     </div>
   `;

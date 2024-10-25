@@ -54,12 +54,15 @@ function saveMomentInfo() {
   try {
     //console.log('Saving MomentInfo...');
     const id = Date.now();
+    const date = new Date();
+    date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
     //console.log(id)
     momentsData.push({
       id,
       file: fileDataURL,
       category: category.value,
-      desc: desc.value
+      desc: desc.value,
+      date
     });
 
     //console.log(momentsData);
