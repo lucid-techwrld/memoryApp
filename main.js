@@ -1,8 +1,5 @@
 import {momentsData, removeMoment} from './momentsData.js'
 
-const now = new Date();
-console.log(now.toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }));
-
 function renderMoments() {
   let momentsHTML = '';
   momentsData.forEach((moment) => {
@@ -38,7 +35,7 @@ function renderMoments() {
   });
   
   document.querySelector('.js-add-btn').addEventListener('click', () => {
-    window.location.href = "addMoments.html"
+    //window.location.href = "addMoments.html"
   })
   
 }

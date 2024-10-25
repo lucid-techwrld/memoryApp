@@ -5,7 +5,7 @@ if (!momentsData) {
     {
       id: 1,
       file: 'images/happy.jpeg',
-      category: 'Lovely Moment',
+      category: 'Lovely',
       desc: "Sunday Mourning with my Sister🥰",
       date: 'October 21, 2024'
     }
@@ -21,6 +21,7 @@ export function saveToStorage() {
   } catch (e) {
     console.error('Error saving:',
       e);
+    alert('An error occurred while saving your moment. Please try again later.');
   }
 
 }

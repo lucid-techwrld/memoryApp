@@ -50,49 +50,52 @@ enableInput();
 
 addBtn.addEventListener('click', () => {
   if (inputFile.files.length > 0 && desc.value !== '' && category.value !== '') {
-    
-  try {
-    const pElement = document.createElement('p');
-    pElement.textContent = 'Loading...'
-    preview.appendChild(pElement);
-    console.log('Loading...');
-    saveMomentInfo();
-    setTimeout(() => {
-      preview.removeChild(pElement)
-      window.location.href="index.html"
-    }, 3000)
-    
-  } catch (e) {
-    throw e
+
+    try {
+      const pElement = document.createElement('p');
+      pElement.textContent = 'Loading...'
+      preview.appendChild(pElement);
+      console.log('Loading...');
+      saveMomentInfo().then(() => {
+        setTimeout(() => {
+          preview.removeChild(pElement)
+          window.location.href = "index.html"
+        }, 4000)
+      }).catch((error) => {
+        throw error
+      })
+    } catch (e) {
+      throw e
+    }
   }
-}
-else {
-  console.log('Enter the right info pls')
-}
+  else {
+    console.log('Enter the right info pls')
+  }
 });
 
 function saveMomentInfo() {
-  try {
-    //console.log('Saving MomentInfo...');
-    const id = Date.now();
-    const date = new Date();
-    date.toUTCString();
-    //console.log(id)
-    momentsData.push({
-      id,
-      file: fileDataURL,
-      category: category.value,
-      desc: desc.value,
-      date
-    });
-
-    //console.log(momentsData);
-
-    saveToStorage()
-  } catch (e) {
-    throw e
-  }
-
+  return new Promise((resolve, reject) => {
+    try {
+      console.log('Saving MomentInfo...');
+      const id = Date.now();
+      const date = new Date();
+      date.toUTCString();
+      //console.log(id)
+      //let fileDataURL = '';
+      momentsData.push({
+        id,
+        file: fileDataURL,
+        category: category.value,
+        desc: desc.value,
+        date
+      });
+      console.log(momentsData);
+      saveToStorage();
+      resolve();
+    } catch (error) {
+      reject(error);
+    }
+  });
 }
 
 
@@ -108,7 +111,7 @@ function readFile(file) {
   const reader = new FileReader();
 
   reader.onload = function(event) {
-    fileDataURL = event.target.result; 
+    fileDataURL = event.target.result;
     //console.log('Processing image');
     // Save dataURL to variable
     //saveMomentInfo(fileDataURL); // Call another function to use the dataURL
