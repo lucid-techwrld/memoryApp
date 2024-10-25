@@ -13,7 +13,7 @@ function renderMoments() {
       <img src="${moment.file}" alt="image.jpg" class="inputImage">
       </div>
       <div class="info">
-        <p class="category">Category: <b>${moment.category}</b></p>
+        <p class="category">Category: <b>${moment.category + ' ' +'Moment'}</b></p>
         <p class="desc">${moment.desc}</p>
         <p class="date"> ${moment.date}</p>
       </div>
@@ -36,6 +36,10 @@ function renderMoments() {
       renderMoments();
     });
   });
+  
+  document.querySelector('.js-add-btn').addEventListener('click', () => {
+    window.location.href = "addMoments.html"
+  })
   
 }
 

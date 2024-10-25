@@ -5,27 +5,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title></title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="addMoment.css">
 </head>
 
 <body>
-  <form action="">
-    <input type="file" id="fileInput" accept="image/*" disabled required>
-    <input type="text" id="description" placeholder="Tell us about your moment" required><br>
-    <select name="Category" id="Category" required>
-      <option value="Lovely">Lovely</option>
-      <option value="Sad">Sad</option>
-      <option value="Happy" selected>Happy</option>
-      <option value="Stupid">Stupid</option>
-      <option value="Funny">Funny</option>
-    </select>
+  <header>
+    <img src="./images/logo.png" alt="./images/logo.png">
+    <span>SaveMoment</span>
+  </header>
+  <main>
+    <form action="">
+      <label for="fileInput" class="drop-container" id="dropcontainer">
+        <span class="drop-title">Drop files here</span>
+        or
+        <input type="file" id="fileInput" accept="image/*" required disabled>
+      </label> <br>
+      <textarea name="description" id="description" cols="30" rows="10" placeholder="Tell us about your moment" required></textarea>
+      <p class="cat">Select Moment</p>
+      <select name="Category" id="Category" required>
+        <option value="Lovely">Lovely</option>
+        <option value="Sad">Sad</option>
+        <option value="Happy" selected>Happy</option>
+        <option value="Stupid">Stupid</option>
+        <option value="Funny">Funny</option>
+      </select>
 
-    <button id="addMoment">Add Moment</button>
+      <button id="addMoment">Add Moment</button>
 
-  </form>
+    </form>
 
-  <div class="preview">
+    <div class="preview">
 
-  </div>
+    </div>
+  </main>
+
 
   <script src="addMoment.js" type="module"></script>
 </body>

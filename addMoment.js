@@ -5,6 +5,26 @@ const desc = document.getElementById('description');
 const category = document.getElementById('Category');
 const inputFile = document.getElementById('fileInput');
 const preview = document.querySelector('.preview');
+const dropContainer = document.getElementById("dropcontainer")
+
+dropContainer.addEventListener("dragover", (e) => {
+  // prevent default to allow drop
+  e.preventDefault()
+}, false)
+
+dropContainer.addEventListener("dragenter", () => {
+  dropContainer.classList.add("drag-active")
+})
+
+dropContainer.addEventListener("dragleave", () => {
+  dropContainer.classList.remove("drag-active")
+})
+
+dropContainer.addEventListener("drop", (e) => {
+  e.preventDefault()
+  dropContainer.classList.remove("drag-active")
+  inputFile.files = e.dataTransfer.files
+})
 
 let url = '';
 
@@ -39,6 +59,7 @@ addBtn.addEventListener('click', () => {
     saveMomentInfo();
     setTimeout(() => {
       preview.removeChild(pElement)
+      window.location.href="index.html"
     }, 3000)
     
   } catch (e) {
