@@ -53,13 +53,10 @@ addBtn.addEventListener('click', () => {
   if (inputFile.files.length > 0 && desc.value !== '' && category.value !== '') {
 
     try {
-      const pElement = document.createElement('p');
-      pElement.textContent = 'Loading...'
-      preview.appendChild(pElement);
-      console.log('Loading...');
+      preview.style.display = "flex"
       saveMomentInfo().then(() => {
         setTimeout(() => {
-          preview.removeChild(pElement)
+          preview.style.display = "none"
           window.location.href = "index.html"
         }, 4000)
       }).catch((error) => {
