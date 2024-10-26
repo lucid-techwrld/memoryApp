@@ -1,8 +1,8 @@
-import {momentsData, removeMoment} from './momentsData.js'
+import {momentsData, removeMoment, searchCategory} from './momentsData.js'
 
-function renderMoments() {
+function renderMoments(moments) {
   let momentsHTML = '';
-  momentsData.forEach((moment) => {
+  moments.forEach((moment) => {
      momentsHTML += `
     <div class="content js-conatiner-${moment.id}">
     <div class="image-container">
@@ -30,15 +30,26 @@ function renderMoments() {
       if (momentConatiner) {
         momentConatiner.remove();
       }
-      renderMoments();
+      renderMoments(momentsData);
     });
   });
   
   document.querySelector('.js-add-btn').addEventListener('click', () => {
     window.location.href = "addMoments.html"
+  });
+  
+  const search =document.getElementById('searchBar');
+  search.addEventListener('keydown', (event) => {
+    let searchInput = search.value;
+    if (event.key == "Enter") {
+      //console.log(searchCategory('Happy'));
+      let newSearch = searchCategory(searchInput);
+      renderMoments(newSearch)
+      searchInput = '';
+    }
   })
   
 }
 
 
-renderMoments();
+renderMoments(momentsData);

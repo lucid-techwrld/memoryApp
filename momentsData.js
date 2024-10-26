@@ -39,3 +39,10 @@ export function removeMoment(mId) {
   momentsData = newMoment;
   saveToStorage();
 }
+
+export function searchCategory(searchInput) {
+  let matchingCategory = momentsData.filter((moment) => {
+   return moment.category === searchInput
+  });
+  return matchingCategory;
+}

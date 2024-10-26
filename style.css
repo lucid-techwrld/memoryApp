@@ -58,8 +58,8 @@ input {
   border: 2px solid hsla(284, 90%, 48%, 0.71);
   outline: none;
 
-  color: hsla(284, 90%, 48%, 0.71);
-  font-size: 10px;
+  color: black;
+  font-size: 12px;
   padding: 5px 10px 5px 20px;
   margin-bottom: 10px;
 }
