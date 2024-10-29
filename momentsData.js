@@ -44,5 +44,9 @@ export function searchCategory(searchInput) {
   let matchingCategory = momentsData.filter((moment) => {
    return moment.category === searchInput
   });
-  return matchingCategory;
+  if (matchingCategory.length === 0) {
+    return 'No Matching Category'
+  } else {
+    return matchingCategory;
+  }
 }

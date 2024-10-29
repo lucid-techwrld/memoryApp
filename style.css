@@ -73,6 +73,13 @@ input {
   margin-bottom: 10px;
 }
 
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .image-container {
   position: relative;
   overflow: hidden;

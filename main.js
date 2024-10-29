@@ -1,9 +1,9 @@
-import {momentsData, removeMoment, searchCategory} from './momentsData.js'
+import { momentsData, removeMoment, searchCategory } from './momentsData.js'
 
 function renderMoments(moments) {
   let momentsHTML = '';
   moments.forEach((moment) => {
-     momentsHTML += `
+    momentsHTML += `
     <div class="content js-conatiner-${moment.id}">
     <div class="image-container">
     <button class="removeMoment" data-moment-id = "${moment.id}"> Delete </button>
@@ -16,12 +16,12 @@ function renderMoments(moments) {
       </div>
     </div>
   `;
-  //console.log(moment.file);
+    //console.log(moment.file);
   })
-   
-  
+
+
   document.querySelector('.content-wrapper').innerHTML = momentsHTML;
-  
+
   document.querySelectorAll('.removeMoment').forEach((btn) => {
     btn.addEventListener('click', () => {
       const momentId = Number(btn.dataset.momentId);
@@ -33,22 +33,29 @@ function renderMoments(moments) {
       renderMoments(momentsData);
     });
   });
-  
+
   document.querySelector('.js-add-btn').addEventListener('click', () => {
     window.location.href = "addMoments.html"
   });
-  
-  const search =document.getElementById('searchBar');
+
+  const search = document.getElementById('searchBar');
   search.addEventListener('keydown', (event) => {
     let searchInput = search.value;
     if (event.key == "Enter") {
       //console.log(searchCategory('Happy'));
       let newSearch = searchCategory(searchInput);
-      renderMoments(newSearch)
-      searchInput = '';
+      if (typeof newSearch === 'string') {
+        renderSearchMessage(newSearch)
+      } else {
+        renderMoments(newSearch)
+      }searchInput = '';
     }
   })
-  
+
+}
+
+function renderSearchMessage(newSearch) {
+  document.querySelector('.content-wrapper').innerHTML = newSearch;
 }
 
 
