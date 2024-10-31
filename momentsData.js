@@ -5,7 +5,7 @@ if (!momentsData) {
     {
       id: 1,
       file: 'images/happy.jpeg',
-      category: 'Lovely',
+      category: 'LOVELY',
       desc: "Sunday Mourning with my Sister🥰",
       date: 'October 21, 2024'
     }

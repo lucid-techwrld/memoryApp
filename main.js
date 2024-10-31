@@ -40,7 +40,7 @@ function renderMoments(moments) {
 
   const search = document.getElementById('searchBar');
   search.addEventListener('keydown', (event) => {
-    let searchInput = search.value;
+    let searchInput = search.value.toUpperCase().trim();
     if (event.key == "Enter") {
       //console.log(searchCategory('Happy'));
       let newSearch = searchCategory(searchInput);
@@ -48,9 +48,10 @@ function renderMoments(moments) {
         renderSearchMessage(newSearch)
       } else {
         renderMoments(newSearch)
-      }searchInput = '';
+      }
+      search.value = '';
     }
-  })
+  });
 
 }
 

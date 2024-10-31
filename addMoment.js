@@ -48,7 +48,6 @@ inputFile.addEventListener('change', (event) => {
 });
 
 enableInput();
-
 addBtn.addEventListener('click', () => {
   if (inputFile.files.length > 0 && desc.value !== '' && category.value !== '') {
 
