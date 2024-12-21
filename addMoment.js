@@ -73,7 +73,7 @@ addBtn.addEventListener('click', () => {
 function saveMomentInfo() {
   return new Promise((resolve, reject) => {
     try {
-      console.log('Saving MomentInfo...');
+      //console.log('Saving MomentInfo...');
       const id = Date.now();
       const date = new Date();
       date.toUTCString();
@@ -86,7 +86,7 @@ function saveMomentInfo() {
         desc: desc.value,
         date
       });
-      console.log(momentsData);
+      //console.log(momentsData);
       saveToStorage();
       resolve();
     } catch (error) {
