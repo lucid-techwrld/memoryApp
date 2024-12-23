@@ -26,6 +26,27 @@ dropContainer.addEventListener("drop", (e) => {
   inputFile.files = e.dataTransfer.files
 })
 
+dropContainer.addEventListener('click', () => {
+  if (inputFile.disabled === true) {
+    console.log('not enable')
+    showToast()
+  }
+})
+
+function showToast() {
+  const toast = document.querySelector(".toast-btn");
+  const toastContainer = document.querySelector(".toast-container");
+  toastContainer.style.display = 'flex';
+  toast.addEventListener('click', () => {
+    toastContainer.style.display = "none"
+  })
+  setTimeout(() => {
+    toastContainer.style.display = "none"
+  }, 10000)
+}
+
+//showToast()
+
 let url = '';
 
 function enableInput() {
@@ -44,7 +65,6 @@ category.addEventListener('change', enableInput);
 
 inputFile.addEventListener('change', (event) => {
   readFile(event.target.files[0]);
-
 });
 
 enableInput();
@@ -103,7 +123,7 @@ let fileDataURL = ''; // Variable to hold the dataURL
 function readFile(file) {
   const maxSize = 1 * 1024 * 1024;
   if (file.size > maxSize) {
-    alert('File exceeded 1MB, Please select a smaller file size');
+    alert('File exceeded 1MB, Please select a smaller file size, else it you might face some error');
     return;
   }
   const reader = new FileReader();

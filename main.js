@@ -62,4 +62,3 @@ function renderSearchMessage(newSearch) {
 
 renderMoments(momentsData);
 
-

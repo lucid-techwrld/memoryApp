@@ -7,6 +7,9 @@
   <title></title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css">
   <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="addMoment.css">
 </head>
@@ -22,7 +25,7 @@
       or
       <input type="file" id="fileInput" accept="image/*" required disabled>
     </label> <br>
-    <textarea name="description" id="description" cols="30" rows="10" placeholder="Tell us about your moment" required></textarea>
+    <textarea name="description" id="description" cols="30" rows="10" placeholder="Type im a little details about your moment" required></textarea>
     <p class="cat">Select Moment</p>
     <select name="Category" id="Category" required>
       <option value="LOVELY">Lovely</option>
@@ -39,6 +42,12 @@
     <div class="loader"></div>
   </div>
 
+  <div class="toast-container">
+    <div class="toast">
+      <p>Fill up other information before choosing image</p>
+      <i class="fa fa-times toast-btn"></i>
+    </div>
+  </div>
   <script src="addMoment.js" type="module"></script>
 </body>
 
