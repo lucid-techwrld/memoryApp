@@ -7,7 +7,7 @@
 body {
   height: 100vh;
   width: 100%;
-  
+
   position: relative;
 
   font-family: 'Playwrite GB S', sans-serif;
@@ -139,7 +139,7 @@ input {
   height: 80px;
   color: #fff;
   font-size: 20px;
-  border:none;
+  border: none;
   border-radius: 50%;
   position: fixed;
   background-color: hsla(284, 90%, 48%, 0.80);
@@ -155,8 +155,23 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
+  color: #fff;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   width: 100%;
   height: 40px;
-  font-size: 0.75rem;
+  background: hsla(288, 94%, 59%, 1);
+  position: absolute;
+  bottom: 0;
+}
+
+footer span {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+footer a i {
+  font-size: 1.4rem;
+  color: hsla(123, 84%, 43%, 1);
   font-weight: bold;
 }
