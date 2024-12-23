@@ -44,6 +44,7 @@ function renderMoments(moments) {
     if (event.key == "Enter") {
       //console.log(searchCategory('Happy'));
       let newSearch = searchCategory(searchInput);
+      console.log(newSearch)
       if (typeof newSearch === 'string') {
         renderSearchMessage(newSearch)
       } else {

@@ -6,7 +6,7 @@ if (!momentsData) {
       id: 1,
       file: 'images/logo.png',
       category: 'LOVELY',
-      desc: "Sunday Mourning with my Sister🥰",
+      desc: "Save your lovely and happy memorable moments to always remember no matter where you are 😀",
       date: 'October 21, 2024'
     }
   ]
