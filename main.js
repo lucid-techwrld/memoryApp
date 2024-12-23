@@ -60,5 +60,6 @@ function renderSearchMessage(newSearch) {
   document.querySelector('.content-wrapper').innerHTML = newSearch;
 }
 
-
 renderMoments(momentsData);
+
+
