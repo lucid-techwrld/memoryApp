@@ -7,9 +7,7 @@
 body {
   height: 100vh;
   width: 100%;
-
   position: relative;
-
   font-family: 'Playwrite GB S', sans-serif;
 }
 
@@ -151,18 +149,22 @@ input {
   background-color: hsla(284, 90%, 20%, 1);
 }
 
-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  color: #fff;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+small {
   width: 100%;
   height: 40px;
   background: hsla(288, 94%, 59%, 1);
   position: absolute;
-  bottom: 0;
+  bottom: 0%;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 1rem;
+  color: #fff;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 footer span {
