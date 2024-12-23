@@ -42,7 +42,7 @@ export function removeMoment(mId) {
 
 export function searchCategory(searchInput) {
   let matchingCategory = momentsData.filter((moment) => {
-   return moment.category === searchInput
+    return moment.category.toUpperCase() === searchInput;
   });
   if (matchingCategory.length === 0) {
     return 'No Matching Category'

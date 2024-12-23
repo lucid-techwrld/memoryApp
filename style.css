@@ -151,3 +151,12 @@ input {
   background-color: hsla(284, 90%, 20%, 1);
 }
 
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
